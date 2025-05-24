@@ -1,4 +1,4 @@
-FROM Debian:bullseye
+FROM debian:bullseye
 RUN apt update -y && apt upgrade -y
 RUN apt install -y nginx openssl
 RUN mkdir -p /etc/nginx/ssl
