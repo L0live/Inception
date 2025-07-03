@@ -51,7 +51,7 @@ services:
       - wordpress
     restart: unless-stopped
     ports:
-      - "8443:443"
+      - "443:443"
     volumes:
       - wordpress_data:/var/www/html:ro
     networks:
@@ -59,7 +59,18 @@ services:
 
 volumes:
   mariadb_data:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /home/yanolive/data/mariadb
+
   wordpress_data:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /home/yanolive/data/wordpress
 
 networks:
   inception:

@@ -3,6 +3,8 @@ DOCKER_COMPOSE = docker-compose -f srcs/docker-compose.yml
 
 # Lancer les services (build + détaché)
 up:
+	@mkdir -p /home/yanolive/data/mariadb
+	@mkdir -p /home/yanolive/data/wordpress
 	$(DOCKER_COMPOSE) up --build
 
 # Arrêter et supprimer les containers + volumes anonymes
@@ -25,3 +27,4 @@ stop:
 # Supprimer les images construites par docker-compose
 clean:
 	$(DOCKER_COMPOSE) down --rmi all --volumes
+	@rm -rf /home/yanolive/data
