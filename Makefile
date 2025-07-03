@@ -1,5 +1,5 @@
 # Variables
-DOCKER_COMPOSE = docker-compose -f srcs/docker-compose.yml
+DOCKER_COMPOSE = docker compose -f srcs/docker-compose.yml
 
 # Lancer les services (build + détaché)
 up:
